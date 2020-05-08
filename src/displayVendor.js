@@ -1,18 +1,15 @@
 MyApp.displayVendor = function(data) {
 
-  let getText = function() {
     let outputText = '';
     //get text
     data.purposes.map(function(purpose) {
-      output += `<h3>${purpose.name}</h3>
+      outputText += `<h3>${purpose.name}</h3>
             <p class="legal-text">
             ${purpose.description} <br> <br>
             </p>`;
     })
-    document.getElementById('legal').textContent = output;
-  }
+    document.getElementById('legal').innerHTML = outputText;
 
-  let getVendors = function() {
     //get vendors
     let vendorList = '<ul id="parent-list">';
     data.vendors.map(function(vendor) {
@@ -27,12 +24,12 @@ MyApp.displayVendor = function(data) {
             <input
             type='checkbox'
             class='switch-input'>
-            <span class='switch-handle' ></span>
+            <span class='switch-handle'></span>
           </label>
       </li>
     `;
     })
     vendorList += '</ul>';
-    document.getElementById('listOfVendors').textContent = vendorList
-  }
+    document.getElementById('listOfVendors').innerHTML = vendorList
+
 }
