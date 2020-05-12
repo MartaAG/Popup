@@ -1,40 +1,40 @@
 MyApp.createModal = function() {
     const body = document.getElementsByTagName('BODY')[0];
 
-    const mainDiv = MyApp.createNode('div');
+    const mainDiv = document.createElement('div');
     mainDiv.classList.add('modal');
     mainDiv.id = 'popup';
 
-    MyApp.append(body, mainDiv)
+    body.appendChild(mainDiv)
 
-    const modalContent = MyApp.createNode('div');
+    const modalContent = document.createElement('div');
     modalContent.classList.add('modal-content');
 
-    MyApp.append(mainDiv, modalContent)
+    mainDiv.appendChild(modalContent);
 
-    const h2 = MyApp.createNode('h2');
+    const h2 = document.createElement('h2');
     h2.classList.add('headline');
     h2.textContent = 'GDPR consent';
 
-    MyApp.append(modalContent, h2)
+    modalContent.appendChild(h2);
 
-    const legalText = MyApp.createNode('div');
+    const legalText = document.createElement('div');
     legalText.id = 'legal';
 
-    MyApp.append(modalContent, legalText);
+    modalContent.appendChild(legalText);
 
-    const list = MyApp.createNode('div');
+    const list = document.createElement('div');
     list.id = 'listOfVendors';
 
-    MyApp.append(modalContent, list);
+    modalContent.appendChild(list);
 
-    const btns = MyApp.createNode('div');
+    const btns = document.createElement('div');
     btns.classList.add('buttons');
 
-    MyApp.append(modalContent, btns);
+    modalContent.appendChild(btns);
 
-    const acceptButton = MyApp.createNode('button');
-    const rejectButton = MyApp.createNode('button');
+    const acceptButton = document.createElement('button');
+    const rejectButton = document.createElement('button');
 
     acceptButton.id = 'accept';
     rejectButton.id = 'reject';
@@ -42,8 +42,8 @@ MyApp.createModal = function() {
     acceptButton.textContent = 'Accept';
     rejectButton.textContent = 'Reject';
 
-    MyApp.append(btns, acceptButton);
-    MyApp.append(btns, rejectButton);
+    btns.appendChild(acceptButton);
+    btns.appendChild(rejectButton);
 
     MyApp.getVendors();
 }
