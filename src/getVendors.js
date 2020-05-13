@@ -5,5 +5,5 @@ MyApp.getVendors = async function() {
   let data = await fetchLink.json();
 
   console.log(data);
-  MyApp.displayVendor(data)
+  MyApp.displayVendor(data);
 }

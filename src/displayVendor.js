@@ -1,4 +1,5 @@
 MyApp.displayVendor = function(data) {
+    //function to display vendors
 
     let outputText = '';
     //get text
@@ -14,7 +15,7 @@ MyApp.displayVendor = function(data) {
     let vendorList = '<ul id="parent-list">';
     data.vendors.map(function(vendor) {
       vendorList += `
-      <li class='vendorList'>
+      <li class='vendorList' id='${vendor.id}vendor'>
       ${vendor.name}
       <a href='${vendor.policyUrl}'
       class='companyLink'

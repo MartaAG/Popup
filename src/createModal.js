@@ -46,4 +46,12 @@ MyApp.createModal = function() {
     btns.appendChild(rejectButton);
 
     MyApp.getVendors();
+
+    //closing the modal does not save vendors:
+    document.getElementById('reject').onclick = function() {
+      MyApp.setCookieExpirationDate('vendors', '', 1);
+      MyApp.closeModal();
+    }
+    //clicking accept saves vendors
+    document.getElementById('accept').addEventListener('click', MyApp.getUserConsents)
 }

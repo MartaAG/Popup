@@ -4,9 +4,9 @@ MyApp.setCookieExpirationDate = function(name, value, days) {
 
   if(days) {
     let date = new Date();
-    data.setTime(data.getTime() + (days * 24 * 60 * 60 * 1000));
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
     expires = '; expires=' + date.toGMTString();
   }
 
-  document.cookie = name + "=" + value + expires + '; path=/';
+  document.cookie = name + '=' + value + expires + '; path=/';
 }
