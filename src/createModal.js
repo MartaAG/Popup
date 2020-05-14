@@ -49,7 +49,7 @@ MyApp.createModal = function() {
 
     //closing the modal does not save vendors:
     document.getElementById('reject').onclick = function() {
-      MyApp.setCookieExpirationDate('vendors', '', 1);
+      MyApp.setCookieExpirationDate('VendorList', '', 1);
       MyApp.closeModal();
     }
     //clicking accept saves vendors
